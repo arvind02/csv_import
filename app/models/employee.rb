@@ -26,10 +26,4 @@ class Employee < ApplicationRecord
 			return []
 		end
 	end 
-
-<<<<<<< HEAD
 end
-=======
-end
-
->>>>>>> e18b64b72ebf3f3dbb3660dd09d32d708e63857d
