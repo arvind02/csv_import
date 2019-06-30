@@ -1,0 +1,22 @@
+<% if notice %>
+	<div class="alert alert-warning" role="alert">
+	  <%= notice %>
+	</div>
+<% end %>
+
+<h1>Import User Details</h1>
+
+<br/>
+<%= form_tag('/companies/import_csv', remote: true, multipart: true, id: "imp_csv" ) do %>
+	<div class="form-group">
+  	<label for="company">Select Company</label><br/>
+		<%= select_tag "company", options_from_collection_for_select(@companies, "id", "name"), class: "" %>
+  </div>
+
+  <div class="form-group">
+    <label for="file">Uppload CSV File</label>
+		<%= file_field_tag :file %>
+	</div>	
+
+	<input type="submit" id="submitCsv" value="Upload CSV" >
+<% end %>
