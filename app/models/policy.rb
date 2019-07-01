@@ -21,5 +21,4 @@ class Policy < ApplicationRecord
 		end
 		return policy_cont
   end
-  
 end
