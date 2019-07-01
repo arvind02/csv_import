@@ -6,7 +6,8 @@ class Company < ApplicationRecord
 
   def self.import_data(file_path, company_id)
     import_boss_data(file_path, company_id)         
-    import_employee_data(file_path, company_id)    
+    import_employee_data(file_path, company_id) 
+    Employee.build_tree   
   end
 
   def self.import_boss_data(file_path, company_id)

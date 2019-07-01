@@ -26,4 +26,8 @@ class Employee < ApplicationRecord
 			return []
 		end
 	end 
+
+	def self.build_tree
+		Employee.rebuild!
+	end
 end
