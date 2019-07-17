@@ -54,7 +54,7 @@ RSpec.describe CompaniesController, :type => :controller do
 
   describe "GET new" do
     it "assigns a new company as @company" do
-      get :new, {}, valid_session
+      get :new, {}
       expect(assigns(:company)).to be_a_new(Company)
     end
   end
@@ -153,6 +153,14 @@ RSpec.describe CompaniesController, :type => :controller do
       company = Company.create! valid_attributes
       delete :destroy, {:id => company.to_param}, valid_session
       expect(response).to redirect_to(companies_url)
+    end
+  end
+
+  describe "GET show_import" do
+    it "assigns all companies as @companies" do
+      company = Company.create! valid_attributes
+      get :index, {}, valid_session
+      expect(assigns(:companies)).to eq([company])
     end
   end
 
